@@ -11,17 +11,18 @@ import {
 import Link from "next/link";
 
 export function NavFooter({
-  cv,
+  cvButton,
 }: {
-  cv: {
+  cvButton: {
+    title: string;
     icon: LucideIcon;
-    url: string;
+    pathname: string;
   };
 }) {
   const { setOpenMobile, isMobile } = useSidebar();
   return (
     <SidebarMenu>
-      <Link href={cv.url}>
+      <Link href={cvButton.pathname}>
         <SidebarMenuItem className="border-2 rounded-2xl">
           <SidebarMenuButton
             size="lg"
@@ -29,9 +30,9 @@ export function NavFooter({
             onClick={() => isMobile && setOpenMobile(false)}
           >
             <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-              <cv.icon className="size-4" />
+              <cvButton.icon className="size-4" />
             </div>
-            <div className="pl-1">Read my CV</div>
+            <div className="pl-1">{cvButton.title}</div>
             <MousePointerClick className="ml-auto" />
           </SidebarMenuButton>
         </SidebarMenuItem>

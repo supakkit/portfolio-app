@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
-import "@/components/ui/globals.css";
+import "./globals.css";
 import { SidebarProvider } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
-import { ThemeProvider } from "@/components/theme-provider";
-import { AppTopBar } from "@/components/app-top-bar";
+import { AppSidebar } from "@/components/navigation/app-sidebar";
+import { ThemeProvider } from "@/components/navigation/theme-provider";
+import { AppTopBar } from "@/components/navigation/app-top-bar";
+import { DockContact } from "@/components/home/dock-contact";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -23,9 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={geistMono.className}
-      >
+      <body className={geistMono.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -34,9 +33,10 @@ export default function RootLayout({
         >
           <SidebarProvider>
             <AppSidebar />
-            <main className="w-full">
+            <main className="w-full relative">
               <AppTopBar />
-              <div className="p-8">{children}</div>
+              <div className="min-h-screen -mt-16 px-8">{children}</div>
+              <DockContact />
             </main>
           </SidebarProvider>
         </ThemeProvider>

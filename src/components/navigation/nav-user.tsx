@@ -1,7 +1,7 @@
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { SidebarMenuButton } from "./ui/sidebar";
+import { SidebarMenuButton } from "../ui/sidebar";
 
 export function NavUser({
   profile,
