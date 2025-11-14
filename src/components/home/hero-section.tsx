@@ -36,7 +36,7 @@ export function HeroSection() {
         </p>
         <div className="flex items-center gap-4 mt-2">
           <Link href="/contact">
-            <Button size="lg" className="rounded-full">
+            <Button size="lg" className="rounded-full cursor-pointer">
               <Zap />Contact me
             </Button>
           </Link>
