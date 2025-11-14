@@ -212,7 +212,7 @@ export const DATA = {
   cvButton: {
     title: "Read my CV",
     icon: FileText,
-    pathname: "/cv",
+    url: "https://drive.google.com/drive/folders/1faJwQO4CJdqa2ztCUGabVclB4e-I-Z7R?usp=sharing",
   },
 
   navbarDock: [
