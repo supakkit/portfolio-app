@@ -40,7 +40,7 @@ export function DockContact() {
             </DockIcon>
           ))}
           <Separator orientation="vertical" className="h-full" />
-          {Object.entries(DATA.contact.social).map(([name, social]) => (
+          {Object.entries(DATA.contact).map(([name, social]) => (
             <DockIcon key={name}>
               <Tooltip>
                 <TooltipTrigger asChild>

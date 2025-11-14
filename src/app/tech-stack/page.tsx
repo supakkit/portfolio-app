@@ -1,3 +1,5 @@
 export default function TechStack() {
-  return <div>This is Tech Stack page.</div>;
+  return (
+    <div className="h-screen flex justify-center items-center">Coming soon...</div>
+  );
 }

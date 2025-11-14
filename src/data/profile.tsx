@@ -220,22 +220,20 @@ export const DATA = {
     { href: "/cv", icon: FileText, label: "CV" },
   ],
   contact: {
-    social: {
-      GitHub: {
-        name: "GitHub",
-        url: "#",
-        icon: Icons.github,
-      },
-      LinkedIn: {
-        name: "LinkedIn",
-        url: "#",
-        icon: Icons.linkedin,
-      },
-      email: {
-        name: "Send Email",
-        url: "#",
-        icon: Icons.email,
-      },
+    GitHub: {
+      name: "GitHub",
+      url: "https://github.com/supakkit",
+      icon: Icons.github,
+    },
+    LinkedIn: {
+      name: "LinkedIn",
+      url: "https://linkedin.com/in/supakkit-sitthi",
+      icon: Icons.linkedin,
+    },
+    email: {
+      name: "Send Email",
+      url: "supakkit.sitthi@gmail.com",
+      icon: Icons.email,
     },
   },
 };
