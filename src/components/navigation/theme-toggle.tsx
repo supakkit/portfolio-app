@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Moon, Sun } from "lucide-react";
 import { flushSync } from "react-dom";
 import { Button } from "../ui/button";
@@ -8,9 +8,13 @@ import { useTheme } from "next-themes";
 
 export const ThemeToggle = () => {
   const { resolvedTheme, setTheme } = useTheme();
-  const isDark = resolvedTheme === "dark";
+  const [mounted, setMounted] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const duration = 400;
+
+  useEffect(() => setMounted(true), []);
+
+  const isDark = mounted && resolvedTheme === "dark";
 
   const toggleTheme = useCallback(async () => {
     if (!buttonRef.current) return;
@@ -58,13 +62,30 @@ export const ThemeToggle = () => {
       ref={buttonRef}
       onClick={toggleTheme}
     >
-      {isDark ? (
-        <Sun className="absolute h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
-      ) : (
-        <Moon className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
-      )}
+      <Sun
+        className={[
+          "absolute h-[1.2rem] w-[1.2rem] transition-all",
+          // when not mounted, hide both or show neutral state
+          !mounted
+            ? "opacity-0"
+            : isDark
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-2",
+        ].join(" ")}
+        aria-hidden
+      />
+      <Moon
+        className={[
+          "h-[1.2rem] w-[1.2rem] transition-all",
+          !mounted
+            ? "opacity-0"
+            : isDark
+            ? "opacity-0 translate-y-2"
+            : "opacity-100",
+        ].join(" ")}
+        aria-hidden
+      />
       <span className="sr-only">Toggle theme</span>
     </Button>
   );
 };
-

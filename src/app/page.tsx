@@ -9,7 +9,7 @@ export default function Page() {
     <div>
       <div className="fixed h-screen -z-20 w-full overflow-hidden"></div>
       <HeroSection />
-      <CircleArrowDown className="animate-bounce -mt-10 h-10 justify-self-center" />
+      <CircleArrowDown className="animate-bounce -mt-10 h-10 mx-auto" />
       <AboutMe />
       <BodySection />
       <FooterSection />
