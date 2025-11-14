@@ -7,6 +7,8 @@ import {
   CalendarIcon,
   HomeIcon,
   MailIcon,
+  Server,
+  PanelTop,
 } from "lucide-react";
 
 type IconProps = React.HTMLAttributes<SVGElement>;
@@ -99,6 +101,89 @@ export const DATA = {
       startDate: "2015-08",
       lastDate: "2019-05",
       details: [],
+    },
+  ],
+
+  projects: [
+    {
+      name: "Notes App",
+      description: "Note taking, AI-powered summaries",
+      image: {
+        path: "/notes-app-screenshot.png",
+        width: 1200,
+        height: 757,
+      },
+      stacks: [
+        {
+          title: "frontend",
+          values: ["React.js", "TailwindCSS", "Shadcn UI", "Axios", "Vitest"],
+        },
+        {
+          title: "backend",
+          values: [
+            "Express.js",
+            "TypeScript",
+            "Node.js",
+            "Mongoose",
+            "Zod",
+            "Swagger",
+            "Vitest",
+          ],
+        },
+        {
+          title: "database",
+          values: ["MongoDB"],
+        },
+      ],
+      sources: [
+        {
+          title: "FE source",
+          icon: PanelTop,
+          url: "https://github.com/supakkit/notes-app-frontend.git",
+        },
+        {
+          title: "BE source",
+          icon: Server,
+          url: "https://github.com/supakkit/notes-app-backend.git",
+        },
+      ],
+      websiteUrl: "https://notes-app-lime-eta.vercel.app/",
+    },
+    {
+      name: "Baby Chub",
+      description: "E-commerce, digital product",
+      image: {
+        path: "/baby-chub-website-screenshot.png",
+        width: 1200,
+        height: 757,
+      },
+      stacks: [
+        {
+          title: "frontend",
+          values: ["React.js", "TailwindCSS", "Shadcn UI", "Axios"],
+        },
+        {
+          title: "backend",
+          values: ["Express.js", "Node.js", "Mongoose"],
+        },
+        {
+          title: "database",
+          values: ["MongoDB"],
+        },
+      ],
+      sources: [
+        {
+          title: "FE source",
+          icon: PanelTop,
+          url: "https://github.com/supakkit/baby-chub-frontend.git",
+        },
+        {
+          title: "BE source",
+          icon: Server,
+          url: "https://github.com/supakkit/baby-chub-backend.git",
+        },
+      ],
+      websiteUrl: "https://baby-chub.vercel.app/",
     },
   ],
 

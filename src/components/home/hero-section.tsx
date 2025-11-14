@@ -40,7 +40,7 @@ export function HeroSection() {
               <Zap />Contact me
             </Button>
           </Link>
-          <div className="text-2xl font-bold tracking-tight">
+          <div className="text-2xl font-semibold tracking-tight">
             {formattedTime}
           </div>
         </div>
