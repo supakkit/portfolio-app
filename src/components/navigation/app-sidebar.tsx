@@ -23,7 +23,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       className="text-nowrap overflow-hidden"
     >
       <SidebarHeader>
-        <NavUser profile={DATA} />
+        <NavUser profile={DATA.profile} />
       </SidebarHeader>
       <Separator />
       <SidebarContent>

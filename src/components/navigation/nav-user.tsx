@@ -2,16 +2,9 @@
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { SidebarMenuButton } from "../ui/sidebar";
+import { Profile } from "@/data/profile";
 
-export function NavUser({
-  profile,
-}: {
-  profile: {
-    fullName: string;
-    role: string;
-    avatar: string;
-  };
-}) {
+export function NavUser({ profile }: { profile: Profile }) {
   return (
     <SidebarMenuButton
       size="lg"

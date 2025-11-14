@@ -1,24 +1,12 @@
 "use client";
 
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
+import { Experience } from "@/data/profile";
 import clsx from "clsx";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useMemo, useState } from "react";
 
-export function ExperienceCard({
-  item,
-}: {
-  item: {
-    role: string;
-    organization: string;
-    startDate: string;
-    lastDate: string;
-    details: string[];
-  };
-}) {
+export function ExperienceCard({ item }: { item: Experience }) {
   const [open, setOpen] = useState<boolean>(false);
 
   const formattedDate = useMemo<string>(() => {
@@ -49,7 +37,7 @@ export function ExperienceCard({
         </div>
         <p>{formattedDate}</p>
       </CardContent>
-      <CardContent className={clsx({ hidden: open === false }, 'px-8')}>
+      <CardContent className={clsx({ hidden: open === false }, "px-8")}>
         <ul className="list-disc">
           {item.details.map((description, index) => (
             <li key={index}>{description}</li>

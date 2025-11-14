@@ -10,30 +10,13 @@ import { Button } from "../ui/button";
 import Image from "next/image";
 import { ShineBorder } from "@/components/ui/shine-border";
 import Link from "next/link";
-import { Globe, LucideIcon } from "lucide-react";
+import { Globe } from "lucide-react";
+import { Project } from "@/data/profile";
 
 export function ProjectCard({
   project,
 }: {
-  project: {
-    name: string;
-    description: string;
-    image: {
-      path: string;
-      width: number;
-      height: number;
-    };
-    stacks: {
-      title: string;
-      values: string[];
-    }[];
-    sources: {
-      title: string;
-      icon: LucideIcon;
-      url: string;
-    }[];
-    websiteUrl: string;
-  };
+  project: Project;
 }) {
   return (
     <Card className="flex flex-col xl:flex-row px-6 rounded-3xl overflow-hidden relative">

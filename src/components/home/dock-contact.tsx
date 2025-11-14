@@ -18,8 +18,8 @@ export function DockContact() {
     <div className="flex flex-col items-center justify-center absolute bottom-8 w-full">
       <TooltipProvider>
         <Dock direction="middle">
-          {DATA.navbarDock.map((item) => (
-            <DockIcon key={item.label}>
+          {Object.entries(DATA.navbarDock).map(([name, item]) => (
+            <DockIcon key={name}>
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
@@ -46,6 +46,10 @@ export function DockContact() {
                 <TooltipTrigger asChild>
                   <Link
                     href={social.url}
+                    target="_blank"
+                    onClick={() => 
+                      (name === 'email') && (window.location.href = 'mailto:yourmail@domain.com')
+                    }
                     aria-label={social.name}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),

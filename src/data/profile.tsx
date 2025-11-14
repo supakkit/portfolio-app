@@ -9,9 +9,11 @@ import {
   MailIcon,
   Server,
   PanelTop,
+  LucideIcon,
 } from "lucide-react";
 
 type IconProps = React.HTMLAttributes<SVGElement>;
+type IconComponent = React.FC<IconProps>;
 
 const Icons = {
   calendar: (props: IconProps) => <CalendarIcon {...props} />,
@@ -48,15 +50,98 @@ const Icons = {
   ),
 };
 
-export const DATA = {
-  fullName: "Supakkit Sitthi",
-  role: "Junior Software Developer",
-  avatar: "/profile.jpeg",
-  location: "Phrae, Thailand",
-  description:
-    "a Junior Full-Stack Developer who brings an engineer’s precision to web development. I love combining creativity, logic, and teamwork to turn complex ideas into simple, useful apps.",
-  github: {
-    url: "https://github.com/supakkit",
+export interface Experience {
+  role: string;
+  organization: string;
+  startDate: string;
+  lastDate: string;
+  details: string[];
+}
+
+export interface Project {
+  name: string;
+  description: string;
+  image: {
+    path: string;
+    width: number;
+    height: number;
+  };
+  stacks: {
+    title: string;
+    values: string[];
+  }[];
+  sources: {
+    title: string;
+    icon: LucideIcon;
+    url: string;
+  }[];
+  websiteUrl: string;
+}
+
+export interface Navbar {
+  label: string;
+  icon: LucideIcon;
+  href: string;
+}
+
+interface Contact {
+  name: string;
+  url: string;
+  icon: IconComponent;
+}
+
+export interface Profile {
+  fullName: string;
+  role: string;
+  avatar: string;
+  location: string;
+  description: string;
+  about: {
+    intro: string;
+    conclude: string;
+  };
+}
+
+interface DATA {
+  profile: Profile;
+  workExperience: Experience[];
+  education: Experience[];
+  projects: Project[];
+  navBar: Navbar[];
+  cvButton: Navbar;
+  navbarDock: {
+    home: Navbar;
+  };
+  contact: {
+    GitHub: Contact;
+    LinkedIn: Contact;
+    email: Contact;
+  };
+}
+
+export const DATA: DATA = {
+  profile: {
+    fullName: "Supakkit Sitthi",
+    role: "Junior Software Developer",
+    avatar: "/profile.jpeg",
+    location: "Phrae, Thailand",
+    description: `a Junior Full-Stack Developer who brings an engineer's precision to web development. I love combining creativity, logic, and teamwork to turn complex ideas into simple, useful apps.`,
+    about: {
+      intro: 
+        `I'm Supakkit, a Junior Full-Stack Developer who switched from
+        Mechanical Engineering to tech. After years in mechanical design,
+        I've found my passion in technology and developed a strong
+        interest in software development, so I decided to transition my career
+        into the tech industry. To prepare for this shift, I completed the
+        Generation Thailand Bootcamp and further enhanced my skills through
+        self-learning and personal projects, which you can explore on my GitHub.`,
+      conclude:
+      `I'm looking for a Junior Full-Stack Software Developer role where
+      I can use my technical skills and analytical mindset to help the team
+      tackle complex problems and create effective web solutions. If
+      you'd like to connect or discuss potential opportunities,
+      I'd be happy to chat!`,
+    },
   },
   workExperience: [
     {
@@ -189,36 +274,37 @@ export const DATA = {
 
   navBar: [
     {
-      title: "Profile",
+      label: "Profile",
       icon: Bot,
-      pathname: "/",
+      href: "/",
     },
     {
-      title: "Projects",
+      label: "Projects",
       icon: FolderClosed,
-      pathname: "/projects",
+      href: "/projects",
     },
     {
-      title: "Tech Stack",
+      label: "Tech Stack",
       icon: GalleryVerticalEnd,
-      pathname: "/tech-stack",
+      href: "/tech-stack",
     },
     {
-      title: "Contact",
+      label: "Contact",
       icon: Mail,
-      pathname: "/contact",
+      href: "/contact",
     },
   ],
+
   cvButton: {
-    title: "Read my CV",
+    label: "Read my CV",
     icon: FileText,
-    url: "https://drive.google.com/drive/folders/1faJwQO4CJdqa2ztCUGabVclB4e-I-Z7R?usp=sharing",
+    href: "https://drive.google.com/drive/folders/1faJwQO4CJdqa2ztCUGabVclB4e-I-Z7R?usp=sharing",
   },
 
-  navbarDock: [
-    { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/cv", icon: FileText, label: "CV" },
-  ],
+  navbarDock: {
+    home: { href: "/", icon: HomeIcon, label: "Home" },
+  },
+
   contact: {
     GitHub: {
       name: "GitHub",
