@@ -191,6 +191,49 @@ export const DATA: DATA = {
 
   projects: [
     {
+      name: "EverLearn Hub (Still Working..)",
+      description: "Micro-learning platform",
+      image: {
+        path: "/everlearn-hub-screenshot.png",
+        width: 1530,
+        height: 902,
+      },
+      stacks: [
+        {
+          title: "frontend",
+          values: ["Next.js", "React.js", "TailwindCSS", "Material UI", "Axios"],
+        },
+        {
+          title: "backend",
+          values: [
+            "Nest.js",
+            "TypeScript",
+            "Node.js",
+            "Prisma",
+            "Redis",
+            "Swagger",
+          ],
+        },
+        {
+          title: "database",
+          values: ["PostgreSQL"],
+        },
+      ],
+      sources: [
+        {
+          title: "FE source",
+          icon: PanelTop,
+          url: "https://github.com/supakkit/everlearn-hub-frontend",
+        },
+        {
+          title: "BE source",
+          icon: Server,
+          url: "https://github.com/supakkit/everlearn-hub-backend",
+        },
+      ],
+      websiteUrl: "",
+    },
+    {
       name: "Notes App",
       description: "Note taking, AI-powered summaries",
       image: {

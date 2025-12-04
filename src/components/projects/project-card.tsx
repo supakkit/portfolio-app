@@ -33,7 +33,7 @@ export function ProjectCard({
       </div>
       <div className="w-full p-0 flex flex-col gap-6 xl:w-1/2">
         <CardHeader>
-          <CardTitle className="text-2xl font-bold">{project.name}</CardTitle>
+          <CardTitle className="text-2xl font-bold text-balance">{project.name}</CardTitle>
           <CardDescription>{project.description}</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-4">

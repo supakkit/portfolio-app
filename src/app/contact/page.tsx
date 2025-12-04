@@ -15,11 +15,13 @@ export default function Contact() {
 
   return (
     <div className="h-screen flex justify-center items-center">
-      <div className="grid gap-2">
+      <div className="grid gap-8">
         {Object.entries(DATA.contact).map(([name, social]) => (
-          <p key={name} className="flex gap-2 text-2xl items-center">
-            <social.icon className="size-6" />
-            {name}:
+          <div key={name} className="flex flex-col lg:flex-row text-center gap-1 text-2xl items-center">
+            <div className="flex gap-2">
+              <social.icon className="size-6" />
+              <p>{name}:</p>
+            </div>
             <Link
               href={social.url}
               onClick={() =>
@@ -27,12 +29,12 @@ export default function Contact() {
                 (window.location.href = "mailto:yourmail@domain.com")
               }
               aria-label={social.name}
-              className="underline text-xl"
+              className="underline text-xl lg:text-2xl"
               target="_blank"
             >
               {social.url.split("https://")}
             </Link>
-          </p>
+          </div>
         ))}
       </div>
       <Particles

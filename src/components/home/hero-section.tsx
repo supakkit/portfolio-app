@@ -23,7 +23,7 @@ export function HeroSection() {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="flex justify-center items-center relative h-screen w-full">
+    <div className="flex justify-center items-center relative h-screen overflow-hidden w-full">
       <HeroBackground />
       <div className="w-lg grid gap-3">
         <h2 className="font-bold text-4xl">I&apos;m Supakkit,</h2>
